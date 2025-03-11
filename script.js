@@ -36,7 +36,7 @@ function validateForm() {
     }
 
     let password = document.getElementById("password").value;
-    let passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.*\d).{8,}$/;
+    let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (!passwordRegex.test(password)) {
         showError("passwordError", "Must be at least 8 characters, with uppercase, lowercase, and a number.");
         isValid = false;
