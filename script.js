@@ -1,4 +1,4 @@
-document.getElementById("userForm").addEventListener("submit", function(event) {
+document.getElementById("userRegistrationForm").addEventListener("submit", function(event) {
     event.preventDefault();
     validateForm();
 });
@@ -6,6 +6,7 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
 function validateForm() {
     let isValid = true;
 
+    //validate the name
     let name = document.getElementById("fullName").value;
     let nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(name)) {
@@ -16,6 +17,7 @@ function validateForm() {
     }
 
 
+    //validate the email address
     let email = document.getElementById("email").value;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -26,6 +28,7 @@ function validateForm() {
     }
 
 
+    //validate the phone number
     let phone = document.getElementById("phone").value;
     let phoneRegex = /^\d{10,15}$/;
     if (!phoneRegex.test(phone)) {
@@ -35,6 +38,7 @@ function validateForm() {
         hideError("phoneError");
     }
 
+    //validate password
     let password = document.getElementById("password").value;
     let passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.*\d).{8,}$/;
     if (!passwordRegex.test(password)) {
